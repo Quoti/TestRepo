@@ -1,10 +1,36 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Premier test de repo</title>
-  </head>
-  <body>
+<head>
+    <script>
+		function displayDate()
+		{
+			document.getElementById("demo").innerHTML=Date();
+		}
 
-          <h1>YOLO, ça a marché</h1>
- 
-  </body>
+		window.onload = function() {
+			var btn = document.getElementById("myButton");
+			btn.onclick = myFunction1;
+		}
+		
+		function myFunction1(){
+			alert("Hello! I am an alert box!!");
+			const fs = require('fs');
+			const ytdl = require('ytdl-core');
+
+			ytdl('http://www.youtube.com/watch?v=A02s8omM_hI')
+			  .pipe(fs.createWriteStream('video.flv'));
+		}
+	</script>
+</head>
+<body>
+
+   <p>Click the button to execute the <em>myFunction()</em> function.</p>
+
+   <button id="myButton">Try it</button>
+   
+   <iframe width="854" height="480" src="https://www.youtube.com/embed/1QXO9sZxJ-E" frameborder="0" allowfullscreen></iframe>
+
+   <p id="demo"></p>
+
+</body>
 </html>
